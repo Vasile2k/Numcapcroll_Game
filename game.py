@@ -10,7 +10,9 @@ VK_SCROLL  = 0x91
 keybd_event = ctypes.windll.user32.keybd_event
 
 def pressKey(key):
+	# Press key
 	keybd_event(key, 0, KEYEVENTF_EXTENDEDKEY | 0, 0)
+	# And release it
 	keybd_event(key, 0, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0)
 	return
 
